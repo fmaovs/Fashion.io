@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 public class RegistrationController {
 
 	private final UserService userService;
-
+	@CrossOrigin(origins = "*")
 	@PostMapping
 	@Operation(tags = "Register Service", description = "You can register to the system by sending information in the appropriate format.")
 	public ResponseEntity<RegistrationResponse> registrationRequest(@Valid @RequestBody RegistrationRequest registrationRequest) {

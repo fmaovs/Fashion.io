@@ -26,4 +26,8 @@ public class Ingreso {
     @Min(5)
     @Max(100)
     private int quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 }

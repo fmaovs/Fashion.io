@@ -39,14 +39,14 @@ public class SecurityConfiguration {
 
 		return http
 				.csrf(CsrfConfigurer::disable)
-				.cors(CorsConfigurer::disable)
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 				.authorizeHttpRequests(request -> request.requestMatchers("/register",
 																	      "/login",
 																	      "/v3/api-docs/**",
 																          "/swagger-ui/**",
 																	      "/swagger-ui.html",
-																	      "/actuator/**")
+																	      "/actuator/**",
+																			"/category")
 													   .permitAll()
 													   .anyRequest()
 													   .authenticated())
