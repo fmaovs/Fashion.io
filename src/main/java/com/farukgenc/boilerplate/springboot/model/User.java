@@ -21,15 +21,16 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	@Column(length = 20)
 	private String name;
 
 	@Column(unique = true)
 	private String username;
 
 	private String password;
-
+	@Column(unique = true, length = 50)
 	private String email;
+
 
 	@Enumerated(EnumType.STRING)
 	private UserRole userRole;
