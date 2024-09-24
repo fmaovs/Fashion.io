@@ -16,6 +16,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
+    @CrossOrigin(origins = "*")
     public ResponseEntity<List<Product>> getProducts() {
         return ResponseEntity.ok(this.productService.findAll());
     }

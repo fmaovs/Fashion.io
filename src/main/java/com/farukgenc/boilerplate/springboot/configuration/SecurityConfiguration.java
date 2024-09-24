@@ -49,6 +49,7 @@ public class SecurityConfiguration {
 																	      "/actuator/**")
 													   .permitAll()
 						.requestMatchers(HttpMethod.POST,"/category" ).hasAuthority("ADMIN")
+				.requestMatchers(HttpMethod.GET, "/products").hasAuthority("ADMIN")
 													   .anyRequest()
 													   .authenticated())
 				.sessionManagement(manager -> manager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
